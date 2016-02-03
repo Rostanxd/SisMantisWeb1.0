@@ -1,0 +1,22 @@
+*{
+    /*border: 1px dashed black;*/
+}
+
+#divHead{
+    height: 2.5em;
+    width: 85em;
+    background-color: #0b3e6f;
+    position: fixed;
+}
+
+#divInput{
+    width: 5em;
+    height: 2em;
+    float: right;
+
+}
+
+#Inicio{
+    margin-top: 10px;
+    margin-left: 15px;
+}
