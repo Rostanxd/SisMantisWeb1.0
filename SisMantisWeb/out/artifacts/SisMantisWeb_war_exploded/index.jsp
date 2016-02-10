@@ -16,7 +16,7 @@
         $("#ValidarUsuario").submit(function(){
           $.post("sycValidaUsuario",$("#ValidarUsuario").serialize(), function(data){
             log = jQuery.trim(data);
-            if(log == 1) document.location.href = "syc_main.jsp";
+            if(log == 1) document.location.href = "syc_empresa.jsp";
             else $("#mensaje-ingreso").html("<h1>Acceso negado, Usuario o Clave incorrecta.</h1>")
           });
           return false;

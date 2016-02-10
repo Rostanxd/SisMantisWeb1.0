@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="SQL Server (Microsoft) - db_ConfigEmp@ROSTAN" uuid="758ae54e-3ad1-4f4f-b9ae-088d922418fd">
+      <secret-storage>master_key</secret-storage>
+      <domain-auth>true</domain-auth>
+      <schema-pattern>db_ConfigEmp.*</schema-pattern>
+      <default-schemas>db_ConfigEmp.*</default-schemas>
+    </data-source>
+  </component>
+</project>

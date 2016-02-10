@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="8173717">
+    <data-source source="LOCAL" name="SQL Server (Microsoft) - db_ConfigEmp@ROSTAN" uuid="758ae54e-3ad1-4f4f-b9ae-088d922418fd">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://ROSTAN\SQLEXPRESS:1433;databaseName=db_ConfigEmp</jdbc-url>
+    </data-source>
+  </component>
+</project>

@@ -15,11 +15,11 @@ import java.util.Calendar;
 
 public class conexion {
     private Connection con;
-    private static final String DRIVER      =   "com.microsoft.sqlserver.jdbc.SQLServerDataSource";
+    private static final String DRIVER      =   "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static final String DBMS        =   "sqlserver";
     private static final String HOST        =   "localhost";
     private static final String PORT        =   "1433";
-    private static final String DATABASE    =   "db_Empresa";
+    private static final String DATABASE    =   "db_ConfigEmp";
     private static final String USER        =   "";
     private static final String PASSWORD    =   "";
 
@@ -63,7 +63,9 @@ public class conexion {
         ResultSet rs = null;
 
         try{
-            st = getCon().prepareStatement("USE [db_Empresa] SELECT* FROM syc_usuarios WHERE syc_usu_codigo = ? AND syc_usu_clave = ? AND syc_usu_estado = 'A'");
+            st = getCon().prepareStatement("USE [db_Empresa] " +
+                    "SELECT* FROM syc_usuarios " +
+                    "WHERE syc_usu_codigo = ? AND syc_usu_clave = ? AND syc_usu_estado = 'A'");
             st.setString(1,usuario);
             st.setString(2,pass);
             rs = st.executeQuery();
