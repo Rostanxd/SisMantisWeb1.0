@@ -1,0 +1,18 @@
+/**{*/
+    /*!*border-color: #0a0a0a;*!*/
+    /*border:solid black 1px;*/
+/*}*/
+
+h1{
+    font-family:Verdana;
+    color: #2E9AFE;
+    border-bottom: black solid 2px;
+
+
+}
+
+h3{
+    font-family:Verdana;
+    color: white;
+    background-color: #2E9AFE;
+}

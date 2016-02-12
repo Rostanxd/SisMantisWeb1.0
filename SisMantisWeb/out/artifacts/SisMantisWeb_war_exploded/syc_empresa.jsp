@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="trxStyles.css"/>
+    <title>Maestro Empresa</title>
 </head>
 <body>
     <%--// Codigo java para el formulario--%>
@@ -45,15 +46,17 @@
         if(request.getParameter("syc_emp_actualiza_fec")!=null) syc_emp_codigo = request.getParameter("syc_emp_actualiza_fec");
     %>
     <h1>EMPRESA</h1>
-    <form name="syc_form_emp" id="syc_form_emp" action="syc_form_emp" method="POST">
+    <form name="syc_form_empresa" id="syc_form_empresa" action="syc_form_empresa" method="POST">
         <table>
             <tr>
                 <td>Codigo Empresa*:</td>
                 <td><input type="text" name="syc_emp_codigo" id="syc_emp_codigo" value="<%=syc_emp_codigo%>"/></td>
+                <td>Logo</td>
             </tr>
             <tr>
                 <td>RUC*:</td>
                 <td><input type="text" name="syc_emp_ruc" id="syc_emp_ruc" value="<%=syc_emp_ruc%>"/></td>
+                <td><input type="file" name="syc_emp_logo" id="syc_emp_logo" value="<%=syc_emp_logo%>"/>></td>
             </tr>
             <tr>
                 <td>Estado:</td>
@@ -72,35 +75,28 @@
                 <td><input type="text" name="syc_emp_telefono_alt" id="syc_emp_telefono_alt" value="<%=syc_emp_telefono_alt%>"/></td>
             </tr>
             <tr>
-                <td>Direccion:</td>
-                <td><input type="text" name="syc_emp_direccion" id="syc_emp_direccion" value="<%=syc_emp_direccion%>"/></td>
-            </tr>
-            <tr>
-                <td>Pagina WEB:</td>
-                <td><input type="text" name="syc_emp_pagina_web" id="syc_emp_pagina_web" value="<%=syc_emp_pagina_web%>"/></td>
-            </tr>
-            <tr>
                 <td>E-mail:</td>
                 <td><input type="text" name="syc_emp_email" id="syc_emp_email" value="<%=syc_emp_email%>"/></td>
             </tr>
             <tr>
-                <td>Logo:</td>
-                <td><input type="text" name="syc_emp_logo" id="syc_emp_logo" value="<%=syc_emp_logo%>"/></td>
+                <td>Direccion:</td>
+                <td colspan="2"><input type="text" name="syc_emp_direccion" id="syc_emp_direccion" size="58" value="<%=syc_emp_direccion%>"/></td>
+            </tr>
+            <tr>
+                <td>Pagina WEB:</td>
+                <td colspan="2"><input type="text" name="syc_emp_pagina_web" id="syc_emp_pagina_web" size="58" value="<%=syc_emp_pagina_web%>"/></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h3>Datos de Auditoria</h3></td>
             </tr>
             <tr>
                 <td>Creacion:</td>
                 <td><input type="text" name="syc_emp_creacion_usr" id="syc_emp_creacion_usr" value="<%=syc_emp_creacion_usr%>" disabled="disabled"/></td>
-            </tr>
-            <tr>
-                <td>Fecha:</td>
                 <td><input type="text" name="syc_emp_creacion_fec" id="syc_emp_creacion_fec" value="<%=syc_emp_creacion_fec%>" disabled="disabled"/></td>
             </tr>
             <tr>
                 <td>Actualiza:</td>
                 <td><input type="text" name="syc_emp_actualiza_usr" id="syc_emp_actualiza_usr" value="<%=syc_emp_actualiza_usr%>" disabled="disabled"/></td>
-            </tr>
-            <tr>
-                <td>Fecha:</td>
                 <td><input type="text" name="syc_emp_actualiza_fec" id="syc_emp_actualiza_fec" value="<%=syc_emp_actualiza_fec%>" disabled="disabled"/></td>
             </tr>
         </table>
