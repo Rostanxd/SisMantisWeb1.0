@@ -12,17 +12,17 @@ import java.util.ArrayList;
  * Created by RoStan on 22/01/2016.
  */
 public class syc extends conexion {
+
     void syc(){}
 
     public String nombreUsuario(String usuCodigo){
-
-        String usu = "";    //  Inicializa la variable de retorno
+        String usu = "";
 
         PreparedStatement st = null;
         ResultSet rs = null;
 
         try{
-            st = getCon().prepareStatement("USE[db_Empresa] SELECT * FROM syc_usuarios WHERE syc_usu_codigo = ?");
+            st = getCon().prepareStatement("USE [db_ConfigEmp] SELECT * FROM syc_usuarios WHERE syc_usu_codigo = ?");
             st.setString(1,usuCodigo);
             rs = st.executeQuery();
             while(rs.next()){
@@ -37,7 +37,7 @@ public class syc extends conexion {
         }
         return usu;
 
-    }   // Fin metodo nombreUsuario
+    }
 
     public ArrayList<syc_usuarios> usuariosEmpresa(String codigo, String nombre){
         ArrayList<syc_usuarios> usu =   new ArrayList<syc_usuarios>();

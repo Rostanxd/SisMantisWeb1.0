@@ -4,19 +4,43 @@
 
 #divHead{
     height: 2.5em;
-    width: 85em;
-    background-color: #0b3e6f;
-    position: fixed;
+    width: 100%;
+    border-bottom: #0b3e6f solid 1px;
+    background-color: #79b7e7;
 }
 
 #divInput{
-    width: 5em;
-    height: 2em;
     float: right;
-
 }
 
 #Inicio{
     margin-top: 10px;
     margin-left: 15px;
+}
+
+#divCentral{
+    heigh: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 0%;
+    margin: 0%;
+}
+
+#accordion{
+    float: left;
+    width: 25%;
+    height: 100%;
+    /*border-right: black solid 1px;*/
+    background-color: #D2E0E6;
+}
+
+#main{
+    background-color: inherit;
+    height: 100%;
+    width: 74.9%;
+    float: right;
+}
+
+#tabs{
+    height:100%;
 }

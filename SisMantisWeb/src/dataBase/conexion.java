@@ -2,6 +2,7 @@ package dataBase;
 
 import entidades.syc_empresa;
 
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,8 +21,8 @@ public class conexion {
     private static final String HOST        =   "localhost";
     private static final String PORT        =   "1433";
     private static final String DATABASE    =   "db_ConfigEmp";
-    private static final String USER        =   "";
-    private static final String PASSWORD    =   "";
+    private static final String USER        =   "sa";
+    private static final String PASSWORD    =   "123456";
 
     void Conexion(){}
 
@@ -31,7 +32,8 @@ public class conexion {
 
         try{
             Class.forName(DRIVER);
-            this.setCon(DriverManager.getConnection("jdbc:" + DBMS + "://"+HOST + ":" + PORT + ";databaseName=" + DATABASE + ";integratedSecurity=true;"));
+//            this.setCon(DriverManager.getConnection("jdbc:" + DBMS + "://"+HOST + ":" + PORT + ";databaseName=" + DATABASE + ";integratedSecurity=true;"));
+            this.setCon(DriverManager.getConnection("jdbc:" + DBMS + "://"+HOST + ":" + PORT + ";databaseName=" + DATABASE + "; user="+USER+";password="+PASSWORD+";"));
 
             System.out.println("OK: LA CONEXION A LA BASE DE DATOS ES UN EXITO");
 
@@ -57,13 +59,33 @@ public class conexion {
         }
     }
 
+    public ResultSet empresasUsr(String usuario){
+        PreparedStatement st = null;
+        ResultSet rs = null;
+
+        try {
+            st = getCon().prepareStatement("SELECT* " +
+                    "FROM syc_usuarios_epr a " +
+                    "JOIN syc_empresas b " +
+                    "on a.syc_emp_codigo = b.syc_emp_codigo " +
+                    "WHERE syc_usu_codigo = ?");
+            st.setString(1,usuario);
+            rs = st.executeQuery();
+
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+
+        return rs;
+    }
+
     public boolean verificaUsuario(String usuario, String pass){
         boolean resultado = false;
         PreparedStatement st = null;
         ResultSet rs = null;
 
         try{
-            st = getCon().prepareStatement("USE [db_Empresa] " +
+            st = getCon().prepareStatement("USE ["+DATABASE+"]"+
                     "SELECT* FROM syc_usuarios " +
                     "WHERE syc_usu_codigo = ? AND syc_usu_clave = ? AND syc_usu_estado = 'A'");
             st.setString(1,usuario);
@@ -74,7 +96,6 @@ public class conexion {
             }
             rs.close();
             st.close();
-
         }catch(Exception e){
             System.out.println("Error: "+e.toString());
         }
@@ -188,7 +209,7 @@ public class conexion {
         ResultSet rs = null;
         PreparedStatement st = null;
         try{
-            st = getCon().prepareStatement("USE[db_Empresa] SELECT* FROM syc_empresas WHERE syc_emp_codigo = ?");
+            st = getCon().prepareStatement("SELECT* FROM syc_empresas WHERE syc_emp_codigo = ?");
             st.setInt(1,codigo);
             rs = st.executeQuery();
             while(rs.next()){

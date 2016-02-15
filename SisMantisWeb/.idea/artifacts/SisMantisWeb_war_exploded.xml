@@ -8,7 +8,12 @@
           <element id="module-output" name="SisMantisWeb" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="sqljdbc" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/sqljdbc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tools/sqljdbc_4.1/enu/sqljdbc41.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/sqljdbc_4.1/enu/sqljdbc41.jar" />
+          <element id="library" level="project" name="sqljdbc41" />
+          <element id="file-copy" path="$PROJECT_DIR$/sqljdbc_4.1/enu/sqljdbc4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/sqljdbc_4.0/enu/sqljdbc4.jar" />
         </element>
       </element>
     </root>

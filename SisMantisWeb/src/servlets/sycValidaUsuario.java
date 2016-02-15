@@ -22,19 +22,20 @@ public class sycValidaUsuario extends HttpServlet {
 
         // Conexion a la Bd
         try {
-//            conexion con = new conexion();
-//            con.conectar();
+            conexion con = new conexion();
+            con.conectar();
 
-//            String codUsuario = request.getParameter("usuario");
-//            String pass = request.getParameter("password");
-//            boolean log = con.verificaUsuario(codUsuario, pass);
-//
-//            out.println(log == true ? "1":"0");
+            String codUsuario = request.getParameter("usuario");
+            String pass = request.getParameter("password");
+            boolean log = con.verificaUsuario(codUsuario, pass);
 
-            out.println("1");
+            out.println(log == true ? "1":"0");
+
+            con.desconectar();
 
         }catch(Exception e){
             System.out.println(e.toString());
+            out.println("2");
         }
     }
 
